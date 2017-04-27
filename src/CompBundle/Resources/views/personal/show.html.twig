@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Новий працівник</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <!--<tr>
+                <td>{{ personal.id }}</td>
+            </tr>-->
+            <tr>
+                <th>Прізвище / Ім'я</th>
+                <td>{{ personal.namePerson }}</td>
+            </tr>
+            <tr>
+                <th>Номер телефону</th>
+                <td>{{ personal.phoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>Адреса</th>
+                <td>{{ personal.office }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('personal_index') }}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Назад</a>
+
+    <a href="{{ path('personal_edit', { 'id': personal.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Редагувати</a>
+
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Видалити" class="btn btn-danger">
+    {{ form_end(delete_form) }}
+
+
+{% endblock %}

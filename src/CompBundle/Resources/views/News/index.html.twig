@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+    <h3>Symfony CMF 2.0.0 First Release Candidate</h3>
+    <p>We are getting ready with the CMF 2.0 release! We are in the process of tagging release candidates and hope to gather feedback in the next weeks, before tagging stable versions. The most important feature is support for Symfony 3.
+
+        We've also created a #symfony_cmf channel on the Symfony Slack to improve collaboration and user support. Move in there, report an error or give us a high five!</p>
+    <p>The upcoming versions will support Symfony 3.0 and higher, as well as the 2.8 LTS version. They require PHP 5.6 or 7. Deprecated code from the 1.x versions has been removed.
+
+        If you use the Sonata Admin in your project, note that we moved the admins out of the individual bundles into the CmfSonataPhpcrAdminIntegrationBundle.</p>
+</div>
+
+        <div class="row">
+        <h3>New in Symfony 3.3: "about" command </h3>
+        <p>In Symfony 3.3, the FrameworkBundle will provide a new console command called about. This command provides information about your Symfony application and your PHP environment. Its output can be useful to debug issues, so you should consider asking for it when a developer reports issues using your software.</p>
+    </div>
+
+        <div class="row">
+        <h3>Discontinuing the Community Translations</h3>
+        <p>In October 2015, we discontinued the translations of Symfony docs (French and Italian at that time) and we decided to only publish documentation in English. The main reason behind this decision was that translations were not in sync with the original contents, so we couldn't guarantee our readers that the non-English docs were correct.</p>
+        <p>Now it's time to do the same with the rest of translations of symfony.com. When the redesigned symfony.com website was launched in March 2011, we created the symfony-marketing repository to store all its translatable contents (from the main menu labels to the static content pages).</p>
+        <p>However, these translations never took off. Most of them are incomplete and we don't have the needed resources to review their quality. The only exception was the Slovenian translation, which was continuously updated by Peter Kokot. Because of this, we've finally decided to remove every translation from symfony.com and remove most contents from the symfony-marketing repository.</p>
+    </div>
+    </div>
+{% endblock %}

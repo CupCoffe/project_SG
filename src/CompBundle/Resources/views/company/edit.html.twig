@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Редагувати компанію</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+    <div class="save">
+    <td><input type="submit" value="Зберегти" class="btn btn-success"/></td>
+    </div>
+    {{ form_end(edit_form) }}
+
+    {{ form_start(delete_form) }}
+    <div class="delete">
+    <input type="submit" value="Видалити" class="btn btn-danger">
+    </div>
+    <div class="back">
+    <a href="{{ path('company_index') }}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Назад</a>
+    </div>
+    {{ form_end(delete_form) }}
+    
+{% endblock %}

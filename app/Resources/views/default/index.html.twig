@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div id="thumbnail-preview-indicators" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#thumbnail-preview-indicators" data-slide-to="0" class="active">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="../../images/slide_1.png">
+                </div>
+            </li>
+            <li data-target="#thumbnail-preview-indicators" data-slide-to="1">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="../../images/slide_2.jpg">
+                </div>
+            </li>
+            <li data-target="#thumbnail-preview-indicators" data-slide-to="2">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="../../images/slide_3.jpg">
+                </div>
+            </li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item slides active">
+                <div class="slide-1"></div>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Do your job with pleasure.</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="item slides">
+                <div class="slide-2"></div>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="item slides">
+                <div class="slide-3"></div>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Take a step - the road will appear by itself.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="right carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-center">Symfony components framework</h3>
+                <p>
+                    At Symfony project there is only one thing that we like as much as developing code: documenting it. Thanks to the selfless volunteer work made by thousands of contributors and the expertise of our documentation managers (Ryan, Wouter and Christian), the Symfony documentation now totals 934,628 lines and more than 3.4 millions of words (considering all versions and not excluding duplicates).
+                </p>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="../../images/symfony.png" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Step One</h4>
+                                <h4 class="subheading">Symfony 2.8.19</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    Symfony is a set of PHP Components, a Web Application framework, a Philosophy, and a Community — all working together in harmony.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="../../images/php.png" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Step Two</h4>
+                                <h4 class="subheading">PHP 5.6</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    PHP is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Development Team. PHP originally stood for Personal Home Page, but it now stands for the recursive acronym PHP: Hypertext Preprocessor.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li>
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="../../images/doctrine.png" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Step Three</h4>
+                                <h4 class="subheading">Doctrine 2.5.4</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    The Doctrine Project (or Doctrine) is a set of PHP libraries primarily focused on providing persistence services and related functionality. Its prize projects are an object-relational mapper (ORM) and the database abstraction layer it is built on top of.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="../../images/twig.png" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Step Three</h4>
+                                <h4 class="subheading">Twig</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">
+                                    Twig is a template engine for the PHP programming language. Its syntax originates from Jinja and Django templates. It's an open source product licensed under a BSD License and maintained by Fabien Potencier. The initial version was created by Armin Ronacher. Symfony2 PHP framework comes with a bundled support for Twig as its default template engine.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

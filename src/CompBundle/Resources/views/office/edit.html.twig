@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Редагувати офіс</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+    <div class="save">
+        <input type="submit" value="Зберегти" class="btn btn-success"/>
+    </div>
+    {{ form_end(edit_form) }}
+
+    {{ form_start(delete_form) }}
+    <div class="back">
+    <a href="{{ path('office_index') }}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Назад</a>
+    </div>
+    <div class="delete">
+    <input type="submit" value="Видалити" class="btn btn-danger">
+    </div>
+    {{ form_end(delete_form) }}
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Компанія</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <!--<tr>
+                <th>Id</th>
+                <td>{{ company.id }}</td>
+            </tr>-->
+            <tr>
+                <th>Назва компанії</th>
+                <td>{{ company.nameCompany }}</td>
+            </tr>
+            <tr>
+                <th>Категорія</th>
+                <td>{{ company.category }}</td>
+            </tr>
+            <tr>
+                <th>Рік заснування</th>
+                <td>{{ company.year }}</td>
+            </tr>
+            <tr>
+                <th>Діяльність</th>
+                <td>{{ company.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('company_index') }}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Назад</a>
+
+    <a href="{{ path('company_edit', { 'id': company.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Редагувати</a>
+
+    {{ form_start(delete_form) }}
+
+    <input type="submit" value="Видалити" class="btn btn-danger">
+
+    {{ form_end(delete_form) }}
+
+    
+{% endblock %}

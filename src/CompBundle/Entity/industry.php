@@ -1,0 +1,248 @@
+<?php
+
+namespace CompBundle\Entity;
+
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * industry
+ *
+ * @ORM\Table(name="industry" )
+ * @ORM\Entity(repositoryClass="CompBundle\Repository\industryRepository")
+ */
+class industry
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, unique=true)
+     */
+    private $name;
+
+    /**
+     * One Industry has Many Industries.
+     * @ORM\OneToMany(targetEntity="industry", mappedBy="parent")
+     */
+    private $children;
+
+    /**
+     * Many Industries have One Industry.
+     * @ORM\ManyToOne(targetEntity="industry", inversedBy="children")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     */
+    private $parent;
+
+    /**
+     * @var \DateTime $createdAt
+     *
+     * @ORM\Column(name="createdAt", type="datetime")
+     * @Gedmo\ Timestampable(on="create")
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime $updatedAt
+     *
+     * @ORM\Column(name="updatedAt", type="datetime")
+     * 
+     */
+    private $updatedAt;
+
+    /**Return string from name*/
+    public function __toString()
+    {
+        try {
+            return (string) $this->name;
+        } catch (Exception $exception) {
+            return '';
+        }
+    }
+    
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return industry
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set parent
+     *
+     * @param integer $parent
+     * @return industry
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return integer 
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime
+     * @return industry
+     */
+    public function setCreatedAt($now)
+    {
+        $this->createdAt = $now;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime
+     * @return industry
+     */
+    public function setUpdatedAt($now)
+    {
+
+        $this->updatedAt = $now;
+
+        return $this;
+    }
+
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+    /**
+     * Constructor
+     */
+   /* public function __construct()
+    {
+        $this->parent = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+    }*/
+
+    /**
+     * Add parent
+     *
+     * @param \CompBundle\Entity\industry $parent
+     * @return industry
+     */
+    public function addParent(\CompBundle\Entity\industry $parent)
+    {
+        $this->parent[] = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Remove parent
+     *
+     * @param \CompBundle\Entity\industry $parent
+     */
+    public function removeParent(\CompBundle\Entity\industry $parent)
+    {
+        $this->parent->removeElement($parent);
+    }
+
+    /**
+     * Add children
+     *
+     * @param \CompBundle\Entity\industry $children
+     * @return industry
+     */
+    public function addChild(\CompBundle\Entity\industry $children)
+    {
+        $this->children[] = $children;
+
+        return $this;
+    }
+
+    /**
+     * Remove children
+     *
+     * @param \CompBundle\Entity\industry $children
+     */
+    public function removeChild(\CompBundle\Entity\industry $children)
+    {
+        $this->children->removeElement($children);
+    }
+
+    /**
+     * Get children
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getChildren()
+    {
+        return $this->children;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->children = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

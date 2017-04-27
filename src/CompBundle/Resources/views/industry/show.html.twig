@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Категорія</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Категорія</th>
+                <td>{{ industry.name }}</td>
+            </tr>
+            <tr>
+                <th>Галузь</th>
+                <td>{{ industry.parent }}</td>
+            </tr>
+            <tr>
+                <th>Дата створення</th>
+                <td>{% if industry.createdAt %}{{ industry.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Дата редагування</th>
+                <td>{% if industry.updatedAt %}{{ industry.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('industry_index') }}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Назад</a>
+
+    <a href="{{ path('industry_edit', { 'id': industry.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Редагувати</a>
+
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Видалити" class="btn btn-danger">
+            {{ form_end(delete_form) }}
+     
+{% endblock %}

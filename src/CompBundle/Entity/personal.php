@@ -1,0 +1,125 @@
+<?php
+
+namespace CompBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * personal
+ *
+ * @ORM\Table(name="personal")
+ * @ORM\Entity(repositoryClass="CompBundle\Repository\personalRepository")
+ */
+class personal
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name_person", type="string", length=100)
+     */
+    private $namePerson;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="phone_number", type="integer", unique=true)
+     */
+    private $phoneNumber;
+
+    /**
+     * Many person from One office.
+     * @ORM\ManyToOne(targetEntity="office")
+     * @ORM\JoinColumn(name="office_id", referencedColumnName="id")
+     */
+    private $office;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set namePerson
+     *
+     * @param string $namePerson
+     * @return personal
+     */
+    public function setNamePerson($namePerson)
+    {
+        $this->namePerson = $namePerson;
+
+        return $this;
+    }
+
+    /**
+     * Get namePerson
+     *
+     * @return string 
+     */
+    public function getNamePerson()
+    {
+        return $this->namePerson;
+    }
+
+    /**
+     * Set phoneNumber
+     *
+     * @param integer $phoneNumber
+     * @return personal
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phoneNumber
+     *
+     * @return integer 
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phoneNumber;
+    }
+
+    /**
+     * Set office
+     *
+     * @param \CompBundle\Entity\office $office
+     * @return personal
+     */
+    public function setOffice(\CompBundle\Entity\office $office = null)
+    {
+        $this->office = $office;
+
+        return $this;
+    }
+
+    /**
+     * Get office
+     *
+     * @return \CompBundle\Entity\office 
+     */
+    public function getOffice()
+    {
+        return $this->office;
+    }
+}

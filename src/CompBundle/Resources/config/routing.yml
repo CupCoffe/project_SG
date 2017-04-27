@@ -1,0 +1,28 @@
+comp_industry:
+    resource: "@CompBundle/Controller/industryController.php"
+    type:     annotation
+
+comp_personal:
+    resource: "@CompBundle/Controller/personalController.php"
+    type:     annotation
+
+comp_office:
+    resource: "@CompBundle/Controller/officeController.php"
+    type:     annotation
+
+comp_company:
+    resource: "@CompBundle/Controller/companyController.php"
+    type:     annotation
+    
+about_page:
+    pattern:  /about/
+    defaults: {_controller: CompBundle:Default:about}
+
+contact_page:
+    pattern: /contact/
+    defaults: {_controller: CompBundle:Default:contact}
+
+news_page:
+    pattern: /news/
+    defaults: {_controller: CompBundle:Default:news}
+

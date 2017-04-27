@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Нова категорія</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <a href="{{ path('industry_index') }}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Назад до списку</a>
+        <input type="submit" value="Добавити" class="btn btn-success"/>
+    {{ form_end(form) }}
+
+{% endblock %}

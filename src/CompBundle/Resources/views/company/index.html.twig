@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <div class="row">
+        <a href="{{ path('company_new') }}" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New Company</a>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-primary filterable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Company list</h3>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="Company" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Year" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Category" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Create" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Update" disabled></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for company in companies %}
+                    <tr>
+                        <td>{{ company.nameCompany }}</td>
+                        <td>{{ company.year }}</td>
+                        <td>{{ company.category }}</td>
+                        <td>{{ company.description }}</td>
+                        <td>{% if company.createdAt %}{{ company.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{% if company.updatedAt %}{{ company.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td><a href="{{ path('company_edit', { 'id': company.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+{% endblock %}
+

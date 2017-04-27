@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Personal" table="personal">
+    <unique-constraints>
+      <unique-constraint name="UNIQ_F18A6D846B01BC5B" columns="phone_number"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="namePerson" type="string" column="name_person" length="255" nullable="false"/>
+    <field name="phoneNumber" type="integer" column="phone_number" nullable="false"/>
+    <field name="idAddress" type="integer" column="id_address" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Галузі</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+    <div class="save">
+    <p><input type="submit" value="Зберегти" class="btn btn-success"/></p>
+    </div>
+    {{ form_end(edit_form) }}
+
+
+    {{ form_start(delete_form) }}
+    <div class="delete">
+    <p><input type="submit" value="Видалити" class="btn btn-danger"></p>
+    </div>
+    <div class="back">
+    <p><a href="{{ path('industry_index') }}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Назад</a></p>
+    </div>
+    {{ form_end(delete_form) }}
+
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="admin.company" class="CompBundle\Admin\CompanyAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Компанії" label="Список"/>
+            <argument/>
+            <argument>CompBundle\Entity\company</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+        </service>
+        <service id="admin.office" class="CompBundle\Admin\OfficeAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Офіси" label="Список" show_in_dashboard="true" />
+            <argument/>
+            <argument>CompBundle\Entity\office</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+        </service>
+        <service id="admin.personal" class="CompBundle\Admin\PersonalAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Персонал" label="Список" show_in_dashboard="true" />
+            <argument/>
+            <argument>CompBundle\Entity\personal</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+        </service>
+        <service id="admin.category" class="CompBundle\Admin\CategoryAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Категорії" label="Список" show_in_dashboard="true" />
+            <argument/>
+            <argument>CompBundle\Entity\industry</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+        </service>
+    </services>
+</container>
